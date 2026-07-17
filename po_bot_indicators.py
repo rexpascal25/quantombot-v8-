@@ -123,7 +123,7 @@ def main_menu():
 def connect_auto_engine():
     global auto_client, auto_connected
     try:
-        from api_pocket import AsyncPocketOptionClient, get_ssid
+        pass  # removed old library
         logger.info("🔐 Auto login with email/password...")
         bot.send_message(TELEGRAM_USER_ID, "🔐 Auto logging into Pocket Option...")
 
@@ -187,7 +187,7 @@ def connect_personal(uid):
 
     def do_connect():
         try:
-            from api_pocket import AsyncPocketOptionClient
+            pass  # removed old library
             async def run():
                 client = AsyncPocketOptionClient(ssid=ssid, is_demo=user.get('is_demo', True))
                 await client.connect()
@@ -340,7 +340,7 @@ def cb_exp(call):
     ).start()
 
 def manual_trade_thread(uid, asset, direction, amount, expiry, client):
-    from api_pocket import OrderDirection as OD
+    OD = type("OD", (), {"CALL": "call", "PUT": "put"})()
     loop = asyncio.new_event_loop()
     async def run():
         try:
@@ -594,7 +594,7 @@ def parse_signal(text):
 # ── Execute Auto Signal ────────────────────────────────────────
 def execute_auto_signal(signal):
     if not auto_client or not auto_connected: return
-    from api_pocket import OrderDirection as OD
+    OD = type("OD", (), {"CALL": "call", "PUT": "put"})()
     asset      = signal['asset']
     direction  = signal['direction']
     expiry     = signal['expiry']
