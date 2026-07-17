@@ -133,7 +133,7 @@ def connect_auto_engine():
         if CAPTCHA_KEY:
             os.environ['TWOCAPTCHA_API_KEY'] = CAPTCHA_KEY
 
-        ssid_data = get_ssid(email=PO_EMAIL, password=PO_PASSWORD)
+        ssid_data = auto_login_and_get_ssid()
         logger.info(f"✅ Got SSID data: {type(ssid_data)}")
 
         # Get demo SSID
