@@ -3,7 +3,6 @@ pyTelegramBotAPI==4.14.0
 telethon==1.36.0
 requests==2.31.0
 playwright==1.40.0
-git+https://github.com/A11ksa/API-Pocket-Option.git
 loguru
 rich
 pandas
