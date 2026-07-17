@@ -1,10 +1,8 @@
-# v9
+# v11
 pyTelegramBotAPI==4.14.0
 telethon==1.36.0
 requests==2.31.0
+pocket-option==0.1.6
 playwright==1.40.0
 loguru
-rich
-pandas
-pydantic
-websockets==11.0.3
+aiohttp
